@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>KATA Test</title>
+</head>
+<body>
+<H1>Hello</H1>
+<script language="JavaScript">
+
+    function findOutlier(integers) {
+        var even=0, odd=0;
+        alert();
+
+        for (var i = 0; i < integers.length; i++) {
+            var mass = integers[i];
+            if (mass % 2 == 0) {
+                odd = odd+1;
+                //document.write(odd+"-Четное <br/>");
+            }
+            if (mass % 2 != 0) {
+                even = even+ 1;
+                //document.write(even+"Нечетное <br/>");
+            }
+            if (odd != 0 && even != 0) {
+               // document.write("OK ");
+                return mass;
+            }
+        }
+    }
+    var x=findOutlier([0,0,0,1, 2, 4]);
+
+    alert(x);
+</script>
+
+</body>
+</html>
