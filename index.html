@@ -9,26 +9,33 @@
 <script language="JavaScript">
 
     function findOutlier(integers) {
-        var even=0, odd=0;
-        alert();
-
+        var even=[], odd=[];
         for (var i = 0; i < integers.length; i++) {
             var mass = integers[i];
             if (mass % 2 == 0) {
-                odd = odd+1;
+                odd[odd.length] = integers[i];
+                console.log("Odd="+odd[even.length]);
+                console.log("Odd.Length="+odd.length);
                 //document.write(odd+"-Четное <br/>");
             }
             if (mass % 2 != 0) {
-                even = even+ 1;
+                even[even.length] = integers[i];
                 //document.write(even+"Нечетное <br/>");
+                console.log("Even="+even[even.length]);
+                console.log("Even.Length="+even.length);
             }
-            if (odd != 0 && even != 0) {
-               // document.write("OK ");
-                return mass;
-            }
+
+
+        }
+        if (even.length>odd.length) {
+            // document.write("OK ");
+            return odd[0];
+        }
+        if (odd.length>even.length){
+            return even[0];
         }
     }
-    var x=findOutlier([0,0,0,1, 2, 4]);
+    var x=findOutlier([2,2,0,5, 2, 4]);
 
     alert(x);
 </script>
